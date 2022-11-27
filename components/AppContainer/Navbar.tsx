@@ -138,6 +138,7 @@ const AppContainer = ({
             theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
         },
       })}
+      style={{ paddingRight: '0px !important' }}
     >
       {children}
     </AppShell>

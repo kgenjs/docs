@@ -13,7 +13,7 @@ const MarkdownContainer = (props: MarkdownContainerProps) => {
   const theme = useMantineTheme();
   return (
     <AppContainer>
-      <Paper radius="md" p="xl">
+      <Paper radius="md" p="xl" style={{ margin: '0px !important' }}>
         <Title size={50}>{props.meta.title}</Title>
         <Space h={20} />
         <Text color={theme.colorScheme === 'dark' ? theme.colors.gray[4] : theme.colors.gray[7]}>

@@ -1,16 +1,18 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
 import { NotificationsProvider } from '@mantine/notifications';
 import { MDXProvider } from '@mdx-js/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import components from '../utils/mdx';
+import '../styles/index.css';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
-  const preferredColorScheme = useColorScheme();
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(preferredColorScheme);
+  const [colorScheme, setColorScheme] = useState<ColorScheme>('light');
+  useEffect(() => {
+    setColorScheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  });
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
