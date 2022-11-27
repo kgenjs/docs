@@ -1,0 +1,30 @@
+import MarkdownContainer from '../../../components/MarkdownContainer';
+
+export const meta = {
+  title: 'Introduction',
+  overview: 'A breif overview about KGen.',
+};
+
+## What is KGen?
+
+KGen is a fully featured project generator written in Node.js. It provides wide support for many complex use cases and provides a human-friendly CLI for quick usage.
+
+However, KGen also providees a developer-friendly Node.js API to create a customizable template to generate from.
+
+KGen supports downloading templates directly from the template repository and automatically caches it for future use.
+
+## Why KGen?
+
+I created KGen mainly because of the complexity of creating a new Node.js application. For those who don't know, here's what a modern Node.js project will need:
+
+- TypeScript
+- Monorepo (`lerna`)
+- ESLint
+- Prettier
+- Bundler (E.g.: Rollup)
+
+And yet this is just a basic configuration. Apparently, repeatedly creating these files need lots of time and requires me to search through documentations to find the best solution to make tools working.
+
+So, here comes KGen - a tool for helping developers create a modern project in no time, without any complexity.
+
+export default ({ children }) => <MarkdownContainer meta={meta}>{children}</MarkdownContainer>

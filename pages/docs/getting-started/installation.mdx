@@ -1,0 +1,38 @@
+import MarkdownContainer from '../../../components/MarkdownContainer';
+
+export const meta = {
+  title: 'Installation',
+  overview: 'See how to install KGen on your machine.',
+};
+
+Installing KGen is quite simple as long as you have Node.js installed. If you have Node installed, jump to [Installing KGen](#installing-kgen) instead.
+
+## Installing Node.js
+
+If you havn't installed Node.js yet, head over to [Node.js downloads page](https://nodejs.org/en/download/) and install using their pre-built installer.
+
+The minimum version of Node.js KGen requires is `v16.15.1`. Please check your installed Node version using:
+
+```bash
+$ node -v
+```
+
+Older versions of Node.js may not be supported.
+
+## Installing KGen
+
+KGen can be installed through the default node package manager `npm`:
+
+```bash
+$ npm install -g @kgen/cli
+```
+
+The CLI should be available after running the command above. To test your installation, run:
+
+```bash
+$ kgen version
+```
+
+At the time of writing, the latest version of KGen is `v0.0.6`. Your versions may vary by time.
+
+export default ({ children }) => <MarkdownContainer meta={meta}>{children}</MarkdownContainer>

@@ -1,0 +1,50 @@
+import MarkdownContainer from '../../../components/MarkdownContainer';
+
+export const meta = {
+  title: 'Basic Usage',
+  overview: 'Basic knowledge on how to use KGen in five minutes.',
+};
+
+## Generating from template
+
+To generate a new project from template, run:
+
+```bash
+$ kgen gen <template-name>
+```
+
+Where `<template-name>` is the name of template, in format `<owner>/<repo>`. For example `samzhangjy/vanilla` points to https://github.com/samzhangjy/kgen-template-vanilla.
+
+Running `kgen gen` will first download the template from GitHub and then KGen will execute the template content.
+
+For example running `samzhangjy/vanilla` template will result the following:
+
+```text
+✔ Project name? … project-name
+✔ Use TypeScript for type-checking? … No / Yes
+✔ Use ESLint for code quality? … No / Yes
+✔ Use Prettier for code style? … No / Yes
+
+INFO - Template generated successfully in 0.029s.
+```
+
+After answering questions about project configuration, KGen will generate your project at the current directory.
+
+## Global configuration
+
+KGen has a global configuration file named `.kgen.json`. You can check its file path with the following command:
+
+```bash
+$ kgen config
+# Config file is located at /Users/sam/.kgen.json
+```
+
+Currently KGen supports the following configurations, with default values on the right side:
+
+```json
+{
+  "downloadHost": "https://github.com",  // Host to download template from, may be a mirror of GitHub
+}
+```
+
+export default ({ children }) => <MarkdownContainer meta={meta}>{children}</MarkdownContainer>
