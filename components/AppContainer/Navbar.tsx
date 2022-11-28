@@ -6,6 +6,7 @@ import {
   Group,
   Header,
   Navbar as MantineNavbar,
+  Tooltip,
   Transition,
   useMantineColorScheme,
   useMantineTheme,
@@ -85,20 +86,32 @@ const AppContainer = ({
             </Center>
 
             <Group>
-              <ActionIcon
-                variant="default"
-                size="lg"
-                component={NextLink}
-                href="/docs/getting-started/introduction"
-              >
-                <IconBook2 size={18} />
-              </ActionIcon>
-              <ActionIcon variant="default" size="lg">
-                <IconBrandGithub size={18} />
-              </ActionIcon>
-              <ActionIcon variant="default" onClick={() => toggleColorScheme()} size="lg">
-                {colorScheme === 'dark' ? <IconSun size={18} /> : <IconMoonStars size={18} />}
-              </ActionIcon>
+              <Tooltip label="Documentation">
+                <ActionIcon
+                  variant="default"
+                  size="lg"
+                  component={NextLink}
+                  href="/docs/getting-started/introduction"
+                >
+                  <IconBook2 size={18} />
+                </ActionIcon>
+              </Tooltip>
+              <Tooltip label="GitHub">
+                <ActionIcon
+                  variant="default"
+                  size="lg"
+                  component="a"
+                  href="https://github.com/kgenjs/kgen"
+                  target="_blank"
+                >
+                  <IconBrandGithub size={18} />
+                </ActionIcon>
+              </Tooltip>
+              <Tooltip label="Theme">
+                <ActionIcon variant="default" onClick={() => toggleColorScheme()} size="lg">
+                  {colorScheme === 'dark' ? <IconSun size={18} /> : <IconMoonStars size={18} />}
+                </ActionIcon>
+              </Tooltip>
             </Group>
           </Group>
         </Header>
@@ -136,6 +149,7 @@ const AppContainer = ({
         main: {
           backgroundColor:
             theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+          overflowX: 'hidden',
         },
       })}
       style={{ paddingRight: '0px !important' }}

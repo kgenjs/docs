@@ -1,4 +1,4 @@
-import { Group, ActionIcon, Title, Text } from '@mantine/core';
+import { Group, Text, ThemeIcon, Title } from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
 
 export type FeatureCardProps = {
@@ -12,9 +12,9 @@ const FeatureCard = (props: FeatureCardProps) => {
 
   return (
     <Group>
-      <ActionIcon size="xl" variant="gradient">
-        <Icon />
-      </ActionIcon>
+      <ThemeIcon size="xl" variant="gradient">
+        <Icon size={20} />
+      </ThemeIcon>
       <Group>
         <Title order={4}>{props.title}</Title>
         <Text color="dimmed">{props.description}</Text>
